@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MessagePerfect AI - Acceso Anticipado</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="main-container">
+        <div class="hero-section">
+            <!-- Asegúrate de tener la imagen 'robot-hero.png' en la carpeta 'images' -->
+            <img src="images/robot-hero.png" alt="Mascota Robot de MessagePerfect AI" class="hero-image">
+
+            <h1>¡Accede antes que nadie a MessagePerfect AI!</h1>
+
+            <!-- Banner de sorteo premium -->
+            <div class="premium-raffle-banner">
+                <div class="golden-badge">
+                    <span class="raffle-text">¡SORTEO!</span>
+                    <p>Suscripción premium anual</p>
+                    <div class="verified-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="verified-icon">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                        </svg>
+                    </div>
+                    <p class="raffle-limit">¡Para los 100 primeros registros!</p>
+                </div>
+            </div>
+
+            <p class="subtitle">Transforma tus mensajes en segundos. Suaviza, mejora y comunica mejor. Prerregístrate ya.</p>
+
+            <form id="signup-form" method="POST">
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+                </div>
+                <div class="form-group checkbox-container">
+                    <input type="checkbox" id="consent" name="consent" value="accepted" required>
+                    <label for="consent">Acepto recibir comunicaciones sobre el lanzamiento de la app.</label>
+                </div>
+                <button type="submit" class="cta-button">Quiero mi acceso anticipado</button>
+            </form>
+
+            <div id="confirmation-message" class="confirmation" style="display: none;">
+                <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+                <h2>¡Gracias por registrarte!</h2>
+                <p>Estamos emocionados de tenerte con nosotros. Pronto recibirás novedades en tu correo.</p>
+                <div class="raffle-entry">¡Has sido inscrito en nuestro sorteo de suscripción premium anual!</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 MessagePerfect AI. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

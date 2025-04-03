@@ -1,0 +1,409 @@
+/* --- Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4a1d92, #1e0036); /* Violeta a Oscuro */
+    color: #ffffff; /* Blanco */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px; /* Espaciado para pantallas pequeñas */
+    overflow-x: hidden; /* Previene scroll horizontal */
+}
+
+/* --- Main Container --- */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Ocupa el espacio disponible */
+    width: 100%;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.1); /* Ligero fondo para contraste */
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image {
+    max-width: 180px; /* Ajusta según tu imagen */
+    height: auto;
+    margin-bottom: 1.5rem;
+    /* Opcional: pequeña animación */
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% { transform: translateY(0px); }
+	50% { transform: translateY(-10px); }
+	100% { transform: translateY(0px); }
+}
+
+
+h1 {
+    font-size: 2.2rem; /* Tamaño ajustado */
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 500px; /* Evita que sea demasiado ancho */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Premium Raffle Banner --- */
+.premium-raffle-banner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.premium-raffle-banner:hover {
+    transform: scale(1.03);
+}
+
+.golden-badge {
+    background: linear-gradient(135deg, #ffdd77, #bd9732);
+    padding: 18px 25px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(189, 151, 50, 0.4);
+    max-width: 85%;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.golden-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 1;
+    transform: translateX(-100%);
+    animation: shine 5s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    20% { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+}
+
+.raffle-text {
+    display: block;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #1e0036;
+    margin-bottom: 4px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.golden-badge p {
+    color: #1e0036;
+    font-weight: 600;
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.verified-badge {
+    display: flex;
+    justify-content: center;
+    margin: 8px auto;
+}
+
+.verified-icon {
+    width: 40px;
+    height: 40px;
+    fill: #ffd700;
+    background-color: #1e0036;
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.raffle-limit {
+    font-size: 0.9rem !important;
+    margin-top: 8px !important;
+    font-weight: 700 !important;
+    color: #1e0036 !important;
+}
+
+/* --- Form Styling --- */
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Espacio entre elementos del form */
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+    max-width: 400px; /* Limita el ancho del input/checkbox */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+input[type="email"]:focus {
+    outline: none;
+    border-color: #ffc93c; /* Amarillo dorado */
+    box-shadow: 0 0 8px rgba(255, 201, 60, 0.5); /* Sombra amarilla */
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido */
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer; /* Mejora UX */
+}
+
+input[type="checkbox"] {
+    width: 18px; /* Tamaño checkbox */
+    height: 18px;
+    cursor: pointer;
+    accent-color: #763dcc; /* Morado */
+}
+
+label[for="consent"] {
+    cursor: pointer; /* Para que parezca clickable */
+    text-align: left; /* Alinea el texto del label */
+    line-height: 1.4;
+}
+
+.cta-button {
+    background-color: #ffc93c; /* Amarillo dorado */
+    color: #1e0036; /* Color de fondo oscuro para contraste */
+    border: none;
+    padding: 14px 35px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 0.5rem; /* Espacio sobre el botón */
+    width: auto; /* Ajusta al contenido */
+    max-width: 400px; /* Consistente con el input */
+}
+
+.cta-button:hover {
+    background-color: #f0b92e; /* Amarillo dorado más oscuro */
+    transform: translateY(-3px); /* Efecto hover */
+}
+
+.cta-button:active {
+    transform: translateY(0); /* Efecto click */
+}
+
+/* --- Confirmation Message --- */
+.confirmation {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.confirmation .check-icon {
+    width: 60px;
+    height: 60px;
+    fill: #ffd700;
+    margin-bottom: 15px;
+    background-color: #1e0036;
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.confirmation h2 {
+    color: #ffc93c;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.confirmation p {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.raffle-entry {
+    display: block;
+    margin-top: 12px;
+    color: #ffdd77;
+    font-size: 1rem;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+/* --- Footer --- */
+.footer {
+    margin-top: 3rem; /* Espacio sobre el footer */
+    padding: 1rem 0;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    width: 100%;
+    text-align: center;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Más pequeño en móvil */
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-image {
+        max-width: 140px;
+    }
+
+    /* Ajustes para el banner de sorteo */
+    .golden-badge {
+        padding: 15px 20px;
+        max-width: 100%;
+    }
+
+    .raffle-text {
+        font-size: 1.3rem;
+    }
+
+    .golden-badge p {
+        font-size: 1rem;
+    }
+
+    .verified-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    input[type="email"],
+    .cta-button,
+    .form-group {
+        max-width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    .cta-button {
+         width: 100%; /* Botón ocupa todo el ancho en móvil */
+         padding: 12px 20px;
+    }
+
+    .checkbox-container {
+        font-size: 0.85rem;
+        justify-content: flex-start; /* Alinea a la izquierda en móvil */
+        padding-left: 5px; /* Pequeño ajuste */
+        padding-right: 5px;
+    }
+
+     label[for="consent"] {
+         flex: 1; /* Permite que el texto se ajuste */
+     }
+}
+
+@media (max-width: 480px) {
+     h1 {
+        font-size: 1.6rem;
+    }
+     .subtitle {
+        font-size: 0.9rem;
+    }
+     .hero-image {
+        max-width: 120px;
+    }
+
+    /* Ajustes para el banner de sorteo */
+    .golden-badge {
+        padding: 12px 15px;
+    }
+
+    .raffle-text {
+        font-size: 1.2rem;
+    }
+
+    .golden-badge p {
+        font-size: 0.9rem;
+    }
+
+    .verified-icon {
+        width: 30px;
+        height: 30px;
+        padding: 6px;
+    }
+
+    .raffle-limit {
+        font-size: 0.8rem !important;
+    }
+
+    .footer {
+        font-size: 0.75rem;
+    }
+}
